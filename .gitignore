@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+runs/
+logs/
+*.log
+
+.venv/
+venv/
+env/
+conda-meta/
+
+.ipynb_checkpoints/

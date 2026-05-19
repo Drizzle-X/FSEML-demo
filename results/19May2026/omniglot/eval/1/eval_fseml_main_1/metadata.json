@@ -1,0 +1,66 @@
+{
+    "command_args": "python evaluate_classification.py --runs 1 --schedule 10 --epoch 1 --num-workers 0",
+    "dir": "../results/",
+    "full_path": "../results/19May2026/omniglot/eval/1/eval_fseml_20260427_main",
+    "name": "omniglot/eval/1/eval_fseml_20260427_main",
+    "params": {
+        "AE": false,
+        "FSEML": true,
+        "Neuromodulation": false,
+        "commit": false,
+        "dataset": "omniglot",
+        "dataset_path": null,
+        "epoch": 1,
+        "fseml_eval_mode": "full-cpn",
+        "iid": false,
+        "lr_list": [
+            0.001,
+            0.0005,
+            0.0002,
+            0.0001
+        ],
+        "memory": 0,
+        "model": "../PreNet/FSEML_Model_20260422_lat128_from93.net",
+        "name": "omniglot/eval/1/eval_fseml_20260427_main",
+        "no_freeze": false,
+        "num_workers": 0,
+        "reset": false,
+        "restrict_finetune_to_seen_classes": true,
+        "rln": 0,
+        "runs": 1,
+        "schedule": [
+            10
+        ],
+        "scratch": false,
+        "seed": 222,
+        "test": false
+    },
+    "path": "../results/19May2026/omniglot/eval/1/eval_fseml_20260427_main_1/",
+    "results": {
+        "Final Results": [
+            [
+                10,
+                {
+                    "0": [
+                        0.86,
+                        0.001
+                    ]
+                }
+            ]
+        ],
+        "Temp Results": [
+            [
+                10,
+                {
+                    "0": [
+                        0.94,
+                        0.001
+                    ]
+                }
+            ]
+        ]
+    },
+    "root_folder": "../results/19May2026",
+    "run_code_dir": "FSEML-master_20260427",
+    "run_cwd": "/Users/drizzle/mmy_study/code/FSEML-rewrite-2026-v1/demo/FSEML-master_20260427"
+}
