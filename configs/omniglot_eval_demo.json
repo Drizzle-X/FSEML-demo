@@ -1,0 +1,56 @@
+{
+  "purpose": "Quick reproducibility demo for Omniglot evaluation",
+  "entry_point": "FSEML-master/evaluate_classification.py",
+  "command": "/opt/anaconda3/envs/pytorch/bin/python evaluate_classification.py --runs 1 --schedule 10 --epoch 1 --num-workers 0",
+  "environment": {
+    "python": "/opt/anaconda3/envs/pytorch/bin/python",
+    "requirements": "requirements_new2026.txt"
+  },
+  "dataset": {
+    "name": "omniglot",
+    "root": "../data/omni",
+    "archive": "../data/omni/omniglot-py/images_evaluation.zip",
+    "background": false,
+    "evaluation_split": "Omniglot evaluation split",
+    "adaptation_images_per_class": 15,
+    "test_images_per_class": 5,
+    "task_schedule": [
+      10
+    ]
+  },
+  "checkpoint": {
+    "model": "../PreNet/FSEML_Model_20260422_lat128_from93.net",
+    "load_mode": "torch.load"
+  },
+  "evaluation": {
+    "seed": 222,
+    "runs": 1,
+    "epoch": 1,
+    "memory": 0,
+    "num_workers": 0,
+    "iid": false,
+    "reset": false,
+    "scratch": false,
+    "fseml_eval_mode": "full-cpn",
+    "restrict_finetune_to_seen_classes": true,
+    "fine_tune_learning_rates": [
+      0.001,
+      0.0005,
+      0.0002,
+      0.0001
+    ],
+    "frozen_representation_layers": 0
+  },
+  "expected_demo_output": {
+    "result_file_directory": "../results",
+    "representative_final_result": [
+      10,
+      {
+        "0": [
+          0.86,
+          0.001
+        ]
+      }
+    ]
+  }
+}

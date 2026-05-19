@@ -1,0 +1,45 @@
+{
+  "purpose": "Default Omniglot evaluation configuration exposed by evaluate_classification.py",
+  "entry_point": "FSEML-master/evaluate_classification.py",
+  "command": "/opt/anaconda3/envs/pytorch/bin/python evaluate_classification.py",
+  "dataset": {
+    "name": "omniglot",
+    "root": "../data/omni",
+    "archive": "../data/omni/omniglot-py/images_evaluation.zip",
+    "task_schedule": [
+      10,
+      50,
+      75,
+      100,
+      200,
+      300,
+      400,
+      500,
+      600
+    ],
+    "adaptation_images_per_class": 15,
+    "test_images_per_class": 5
+  },
+  "checkpoint": {
+    "model": "../PreNet/FSEML_Model_20260422_lat128_from93.net"
+  },
+  "evaluation": {
+    "seed": 222,
+    "runs": 5,
+    "epoch": 5,
+    "memory": 0,
+    "num_workers": 4,
+    "fine_tune_learning_rates": [
+      0.001,
+      0.0005,
+      0.0002,
+      0.0001
+    ],
+    "iid": false,
+    "reset": false,
+    "scratch": false,
+    "fseml_eval_mode": "full-cpn",
+    "restrict_finetune_to_seen_classes": true,
+    "frozen_representation_layers": 0
+  }
+}

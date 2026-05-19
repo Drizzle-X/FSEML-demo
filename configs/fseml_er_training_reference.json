@@ -1,0 +1,62 @@
+{
+  "purpose": "Reference training configuration for FSEML and FSEML-ER components exposed by mrcl_classification.py",
+  "entry_point": "FSEML-master/mrcl_classification.py",
+  "command": "/opt/anaconda3/envs/pytorch/bin/python mrcl_classification.py",
+  "dataset": {
+    "name": "omniglot",
+    "meta_train_classes": [
+      0,
+      962
+    ],
+    "background": true,
+    "train_split_images_per_class": 15,
+    "test_split_images_per_class": 5
+  },
+  "meta_learning": {
+    "treatment": "FSEML",
+    "steps": 20000,
+    "seed": 9,
+    "tasks": 1,
+    "meta_lr": 0.0005,
+    "meta_lr_schedule_steps": [],
+    "meta_lr_schedule_values": [],
+    "update_lr": 0.1,
+    "update_step": 10,
+    "num_workers": 4,
+    "frozen_representation_layers": 6,
+    "no_reset": false
+  },
+  "fssae": {
+    "encoder_channels": 32,
+    "latent_dim": 128,
+    "adapter_dim": 256,
+    "sparsity_target": 0.05,
+    "sparsity_weight": 0.005,
+    "reconstruction_weight": 0.1,
+    "weight_decay_weight": 0.1,
+    "fda_weight": 0.1
+  },
+  "replay": {
+    "enabled": true,
+    "mode": "fse",
+    "buffer_size": 1000,
+    "gap": 960,
+    "rate": 0.05,
+    "top_p": 32,
+    "partitions": 10,
+    "visualize": false,
+    "visualization_directory": "replay_visualizations",
+    "visualization_max": 10
+  },
+  "checkpointing": {
+    "model_name": "FSEML_Model_main.net",
+    "checkpoint": false,
+    "saved_model": "FSEML_Model_main.net",
+    "save_interval_steps": 100
+  },
+  "outputs": {
+    "root": "../results",
+    "experiment_name": "omniglot/0_0005/mrcl_omniglot_fseml_main",
+    "tensorboard": true
+  }
+}

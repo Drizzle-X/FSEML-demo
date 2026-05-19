@@ -440,7 +440,7 @@ if __name__ == '__main__':
     argparser.add_argument('--test', action="store_true")
     argparser.add_argument("--iid", action="store_true")
     argparser.add_argument("--rln", type=int, default=0)        
-    argparser.add_argument("--runs", type=int, default=10)                            
+    argparser.add_argument("--runs", type=int, default=5)                            
     argparser.add_argument("--AE", action="store_true")
     argparser.add_argument("--FSEML", action="store_true", default=True)
     argparser.add_argument("--fseml-eval-mode", choices=["full-cpn", "output-only"], default="full-cpn")
@@ -456,4 +456,3 @@ if __name__ == '__main__':
     args.name = "/".join([args.dataset, "eval", str(args.epoch).replace(".", "_"), args.name])
 
     main(args)
-
